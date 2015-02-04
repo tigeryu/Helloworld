@@ -29,8 +29,9 @@ public class Class8 {
         vehicle.speed=12;
 
         Truck truck=new Truck();
-        truck.speed=12;
-        truck.payload=13;
+        truck.speed=12;   //对象引用的父类实例的变量
+        truck.payload=13;  //对象引用自己的实例变量  vehicle.speed不会出现， 父类的实例不能引用子类的实例变量
+
 
 
 
