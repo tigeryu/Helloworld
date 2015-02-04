@@ -20,9 +20,9 @@ public class Class8 {
         System.out.println(c%b);     //如果是一个负数，那么得到的%的值还是负数   先绝对值取余数
 
         short s=3;
-        s+=1;
+        s+=1;              //可以进行操作，是因为+=是一个操作符，相当于(short)s=(short)(s+1)
         System.out.println(s);
-        s=(short)(s+1);  //类型提升
+        s=(short)(s+1);  //类型提升       s=s+1会出错，因为s+1把一个short类型的s和整形1相加有类型提升，将得到一个int类型的值
         System.out.println(s);
 
         Vehicle vehicle=new Vehicle();
