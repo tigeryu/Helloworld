@@ -4,29 +4,45 @@ public class TuZi {
 
 
     public static void main(String[] args) {
-        Revers revers=new Revers();
 
-        int[] myA={12,14,16,244,22,55,45};
-        revers.reverse(myA);
 
-//        for (int i = 0; i <myA.length ; i++) {
-//            System.out.print(myA[i ]+"\t");
- //       }
-        for(int myint:myA){
-            System.out.print(myint+"\t");
+        char[] myChar="this is a black cat".toCharArray();
+        TuZi.reverse(myChar,0,myChar.length-1);
+        for(char char2:myChar) {
+            System.out.print(char2);
+        }
+        System.out.println();
+
+            int i=0; int j=0;
+            for (i=0;j<myChar.length;j++) {
+                if(myChar[j ]==' '){
+                    TuZi.reverse(myChar,i,j-1);
+                    i=j+1;
+                }
+
+
+            }
+            TuZi.reverse(myChar,i,myChar.length-1);
+
+            for (char char1 : myChar) {
+                System.out.print(char1);
+            }
+
+
         }
 
-    }
 
-}
-    class Revers{
-    public int[] reverse(int[] array1){
-        for (int i = 0; i <array1.length/2 ; i++) {
-            int temp=array1[i];
-            array1[i]=array1[array1.length-1-i];
-            array1[array1.length-1-i]=temp;
+
+    public static char[] reverse(char[] array1,int startIndex,int endIndex){
+        int leftIndex=startIndex;
+        int rightIndex=endIndex;
+        while (leftIndex<rightIndex){
+            char temp=array1[leftIndex];
+            array1[leftIndex]=array1[rightIndex];
+            array1[rightIndex]=temp;
+            leftIndex++;
+            rightIndex--;
         }
         return array1;
-
     }
 }
